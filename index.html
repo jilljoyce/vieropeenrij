@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript">
+            var veld = [
+                [0, 1, 0],
+                [0, 0, 0]
+            ];
+            window.onload = tekenbord;
+    
+            function tekenbord() {
+                let table = document.getElementById("tablei")
+
+                for (var x = 0; x < veld.length; x++) {
+                    let row = document.createElement("tr")
+                    table.appendChild(row)
+
+                    for (var y = 0; y < veld[x].length; y++) {
+                        let cel = document.createElement("td")
+                        cel.id = "column" + (y+1)
+                        row.appendChild(cel)
+            
+                        
+                        if (veld[x][y] == 0) {
+                            cel.style.border = "2px solid red"
+                        } else {
+                            cel.style.backgroundColor = "yellow"
+                        }
+                        cel.onclick = function(event){
+                            console.log("result event", event)
+                        }
+                    }
+                }
+            }
+
+            
+
+        </script>
+    </head>
+    <body>
+        <style>
+            td{
+                width: 30px;
+                height: 30px;
+            }
+        </style>
+
+        <table id="tablei">
+
+        </table>
+        <!-- <style>
+            .column1 {
+                width: 30px;
+                height: 30px;
+                border: 2px solid red;
+            }
+
+            .column1:hover {
+                background-color: orange;
+            }
+        </style>
+
+        <table>
+            <tr>
+                <td id="cel00">.</td>
+                <td id="cel01">.</td>
+                <td id="cel02">.</td>
+
+            </tr>
+            <tr>
+                <td id="cel10">.</td>
+                <td id="cel11">.</td>
+                <td id="cel12">.</td>
+
+            </tr>
+        </table> -->
+        
+    </body>
+</html>>
